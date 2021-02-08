@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="g-recaptcha"
+      data-sitekey="6LcxqU8aAAAAAD18dcmR2cX0zh58ZOEjQrxhsoF7"
+      data-callback="onSubmit"
+      data-size="invisible">
+</div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -111,6 +116,8 @@ span.psw {
 }
 </style>
 </head>
+         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <body onload='start()'>
 
 <div id="id01" class="modal">
@@ -144,14 +151,15 @@ function start() {
 }
     
 function login() {
+    grecaptcha.execute();
     var uname = document.getElementById('username').value
     var pass = document.getElementById('password').value
     if(uname === 'jmathias' && pass === 'jm051810') {
         localStorage.setItem('uname', 'jmathias')
-        location.reload()
+        location.replace('/student')
     } else if(uname === 'dclapier' && pass === 'dc23455') {
         localStorage.setItem('uname', 'dclapier')
-        location.reload()
+        location.replace('/student')
     }
 }
 </script>
