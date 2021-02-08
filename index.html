@@ -1,0 +1,15 @@
+<html>
+    <head>
+    
+    </head>
+    <body onload="check()">
+    
+    </body>
+    <script>
+        function check() {
+            if(localStorage.getItem('uname') === null) {
+                location.replace('login.html')
+            }
+        }
+    </script>
+</html>
